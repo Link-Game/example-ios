@@ -1,22 +1,99 @@
 //
 //  AppDelegate.m
-//  LinkGameOpenSDKDemo
+//  SDKTestApp
 //
-//  Created by 刘万林 on 2018/5/11.
-//  Copyright © 2018年 Cloududu. All rights reserved.
+//  Created by 刘万林 on 2018/3/2.
+//  Copyright © 2018年 刘万林. All rights reserved.
 //
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+#import <LinkGameOpenSDK/LGOpenSDK.h>
+#import "Utils.h"
+#define APP_ID @"256abdejmnpstuvwyz"
+#define APP_secret @"b03af2ec5e284502653f3b5b60d4c2a2"
+
+@interface AppDelegate ()<LinkGameOpenSDKDelegate>
 
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+//    初始化,注册回调
+    [[LGOpenSDK share]RegisterAppID:APP_ID AppSecret:APP_secret Delegate:self];
+    return YES;
+}
+
+-(void)didResponsed:(LGBaseResponse *)response{
+    NSLog(@"收到回调Status: %@",response.status);
+    NSLog(@"收到回调Errormessage: %@",response.Message);
+    
+    if (response.ResultRequestType == LGRequestTypeShare) {
+        LGShareResponse * shareResponse = (LGShareResponse *)response;
+            switch (shareResponse.ErrorCode) {
+                case LGOpenSDKErrorCodeNoError:
+                    NSLog(@"分享成功!!");
+                    [Utils alertInfo:@"分享成功!!" showOkButton:YES];
+                    break;
+                case LGOpenSDKErrorCodeUserCancel:
+                    NSLog(@"用户取消分享");
+                    [Utils alertInfo:@"用户取消分享" showOkButton:YES];
+                    break;
+                case LGOpenSDKErrorCodeUserRefused:
+                    NSLog(@"用户拒绝分享");
+                    [Utils alertInfo:@"用户拒绝分享" showOkButton:YES];
+                    break;
+                case LGOpenSDKErrorCodeParematersError:
+                    NSLog(@"分享参数错误");
+                    [Utils alertInfo:@"分享参数错误" showOkButton:YES];
+                    break;
+                case LGOpenSDKErrorCodeTimeOut:
+                    NSLog(@"分享超时");
+                    [Utils alertInfo:@"分享超时" showOkButton:YES];
+                    break;
+                case LGOpenSDKErrorCodeOtherError:
+                    NSLog(@"分享:其他错误");
+                    [Utils alertInfo:@"分享:其他错误" showOkButton:YES];
+                    break;
+            }
+    }
+    if (response.ResultRequestType == LGRequestTypeAuthorize){
+        LGAuthorizeResponse * authorizeResponse = (LGAuthorizeResponse *)response;
+        switch (authorizeResponse.ErrorCode) {
+            case LGOpenSDKErrorCodeNoError:
+            {
+                NSLog(@"授权成功!!");
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"AuthSuccessNotification" object:self userInfo:@{@"RefreshToken":authorizeResponse.RefreshToken,@"APPID":APP_ID}];
+            }
+                break;
+            case LGOpenSDKErrorCodeUserCancel:
+                NSLog(@"用户取消授权");
+                [Utils alertInfo:@"用户取消授权" showOkButton:YES];
+                break;
+            case LGOpenSDKErrorCodeTimeOut:
+                NSLog(@"用户长时间未点击授权");
+                [Utils alertInfo:@"用户长时间未点击授权" showOkButton:YES];
+                break;
+            case LGOpenSDKErrorCodeOtherError:
+                NSLog(@"其他错误");
+                [Utils alertInfo:@"其他错误" showOkButton:YES];
+                break;
+
+            case LGOpenSDKErrorCodeUserRefused:
+                NSLog(@"用户拒绝授权");
+                [Utils alertInfo:@"用户拒绝授权" showOkButton:YES];
+                break;
+            case LGOpenSDKErrorCodeParematersError:
+                NSLog(@"授权参数错误");
+                [Utils alertInfo:@"授权参数错误" showOkButton:YES];
+                break;
+        }
+    }
+}
+
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+
     return YES;
 }
 

@@ -13,6 +13,10 @@
 		C4B9D23820A581A10013D643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4B9D23720A581A10013D643 /* Assets.xcassets */; };
 		C4B9D23B20A581A10013D643 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B9D23920A581A10013D643 /* LaunchScreen.storyboard */; };
 		C4B9D23E20A581A10013D643 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B9D23D20A581A10013D643 /* main.m */; };
+		C4B9D24920A5820B0013D643 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B9D24420A5820A0013D643 /* Utils.m */; };
+		C4B9D24A20A5820B0013D643 /* BSKImagePreView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B9D24620A5820B0013D643 /* BSKImagePreView.m */; };
+		C4B9D24B20A5820B0013D643 /* flower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4B9D24720A5820B0013D643 /* flower.jpg */; };
+		C4B9D25020A582D70013D643 /* LinkGameOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B9D24F20A582D70013D643 /* LinkGameOpenSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,12 @@
 		C4B9D23A20A581A10013D643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4B9D23C20A581A10013D643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4B9D23D20A581A10013D643 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C4B9D24420A5820A0013D643 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		C4B9D24520A5820B0013D643 /* BSKImagePreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSKImagePreView.h; sourceTree = "<group>"; };
+		C4B9D24620A5820B0013D643 /* BSKImagePreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSKImagePreView.m; sourceTree = "<group>"; };
+		C4B9D24720A5820B0013D643 /* flower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower.jpg; sourceTree = "<group>"; };
+		C4B9D24820A5820B0013D643 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		C4B9D24F20A582D70013D643 /* LinkGameOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LinkGameOpenSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B9D25020A582D70013D643 /* LinkGameOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,7 @@
 		C4B9D22220A5819F0013D643 = {
 			isa = PBXGroup;
 			children = (
+				C4B9D24C20A5825E0013D643 /* Frameworks */,
 				C4B9D22D20A5819F0013D643 /* LinkGameOpenSDKDemo */,
 				C4B9D22C20A5819F0013D643 /* Products */,
 			);
@@ -58,6 +70,11 @@
 		C4B9D22D20A5819F0013D643 /* LinkGameOpenSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C4B9D24520A5820B0013D643 /* BSKImagePreView.h */,
+				C4B9D24620A5820B0013D643 /* BSKImagePreView.m */,
+				C4B9D24720A5820B0013D643 /* flower.jpg */,
+				C4B9D24820A5820B0013D643 /* Utils.h */,
+				C4B9D24420A5820A0013D643 /* Utils.m */,
 				C4B9D22E20A5819F0013D643 /* AppDelegate.h */,
 				C4B9D22F20A5819F0013D643 /* AppDelegate.m */,
 				C4B9D23120A5819F0013D643 /* ViewController.h */,
@@ -69,6 +86,14 @@
 				C4B9D23D20A581A10013D643 /* main.m */,
 			);
 			path = LinkGameOpenSDKDemo;
+			sourceTree = "<group>";
+		};
+		C4B9D24C20A5825E0013D643 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4B9D24F20A582D70013D643 /* LinkGameOpenSDK.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B9D24B20A5820B0013D643 /* flower.jpg in Resources */,
 				C4B9D23B20A581A10013D643 /* LaunchScreen.storyboard in Resources */,
 				C4B9D23820A581A10013D643 /* Assets.xcassets in Resources */,
 				C4B9D23620A5819F0013D643 /* Main.storyboard in Resources */,
@@ -142,8 +168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B9D23320A5819F0013D643 /* ViewController.m in Sources */,
+				C4B9D24A20A5820B0013D643 /* BSKImagePreView.m in Sources */,
 				C4B9D23E20A581A10013D643 /* main.m in Sources */,
 				C4B9D23020A5819F0013D643 /* AppDelegate.m in Sources */,
+				C4B9D24920A5820B0013D643 /* Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,12 +313,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YP8G3T6PA9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LinkGameOpenSDKDemo/Frameworks",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = LinkGameOpenSDKDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cloududu.LGOpenSDKDemo.LinkGameOpenSDKDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cloududu.LGOpenSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,12 +335,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YP8G3T6PA9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LinkGameOpenSDKDemo/Frameworks",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = LinkGameOpenSDKDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cloududu.LGOpenSDKDemo.LinkGameOpenSDKDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cloududu.LGOpenSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
