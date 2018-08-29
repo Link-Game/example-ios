@@ -7,4 +7,4 @@
 
 展示了LGOpenSDK的基本使用方法
 
-具体接入流程请参考[游戏互联](http://www.zhuanxinyu.com/)官方文档
+具体接入流程请参考[游戏互联](http://open.youxihulian.com/)官方文档
