@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "8b049016-ccb2-477d-c73f-a876d37a2b90.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "game.png",
       "scale" : "2x"
     },
     {

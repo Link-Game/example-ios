@@ -1,58 +1,79 @@
 //
 //  LGOpenSDK.h
-//  LGOpenSDK
+//  LinkGameOpenSDK
 //
-//  Created by 刘万林 on 2018/3/2.
-//  Copyright © 2018年 刘万林. All rights reserved.
+//  Created by 刘万林 on 2018/8/15.
+//  Copyright © 2018年 ChaungMiKeJi. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import <LinkGameOpenSDK/LGRequest.h>
-#import <LinkGameOpenSDK/LGResponse.h>
+#import "LGSDKBasePublicHeader.h"
 
-//! Project version number for LGOpenSDK.
-FOUNDATION_EXPORT double LinkGameOpenSDKVersionNumber;
-//! Project version string for LGOpenSDK.
-FOUNDATION_EXPORT const unsigned char LinkGameOpenSDKVersionString[];
+@protocol LGOpenSDKDelegate<NSObject>
 
-@protocol LinkGameOpenSDKDelegate<NSObject>
+@optional
+/**
+ 授权登录收到游戏互联的返回结果
+ @param resault 返回结果
+ */
+-(void)authOnResault:(LGSDKAuthResult *)resault;
 
--(void)didResponsed:(LGBaseResponse * )response;
+/**
+ 分享收到游戏互联的返回结果
+ @param resault 返回结果
+ */
+-(void)shareOnResault:(LGSDKShareResult *)resault;
+
 @end
 
+@interface LGOpenSDK : NSObject
+
+
 /**
- 开放平台SDK
+ 获取游戏互联SDK单例
+
+ @return 游戏互联SDK单例
  */
-@interface LGOpenSDK:NSObject
++(LGOpenSDK *)share;
+
 
 /**
- 获得SDK单例
+ 注册appid 并设置回调代理
+
+ @param appid 游戏互联平台Appid
+ @param delegate 回调代理
+ @return 是否成功
  */
-+(instancetype)share;
+-(BOOL)registerApp:(NSString *)appid withDelegate:(id<LGOpenSDKDelegate>)delegate;
 
 /**
- 注册App
-
- @param appID 开放平台提供的AppID
- @param appSecret 开放平台提供的AppSecret
- @param delegate 响应回调的delegate
- */
--(void)RegisterAppID:(NSString *)appID AppSecret:(NSString *)appSecret Delegate:(id<LinkGameOpenSDKDelegate>)delegate;
-
-/**
- 向游戏互联发送一个请求
+ 向游戏互联发起请求
 
  @param request 请求
  @return 是否成功
  */
--(BOOL)sendRequest:(LGBaseRequest *)request;
+-(BOOL)sendRequest:(LGSDKBaseRequest *)request;
 
 /**
- 判断是否安装游戏互联
- 需要将 linkgame 加入URLScheme白名单
+ 获取SDK版本
 
- @return 是否安装游戏互联
+ @return 版本信息
  */
--(BOOL)isInstallLinkGame;
+-(NSString * )getSDKVersion;
+
+/**
+ 打开游戏互联.
+
+ @return 是否打开成功
+ */
+-(BOOL)openLinkGame;
+
+
+/**
+ 检查游戏互联是否安装,需要将 linkgame 加入scheme白名单
+
+ @return 是否安装
+ */
+-(BOOL)isLinkGameInstall;
 @end
 

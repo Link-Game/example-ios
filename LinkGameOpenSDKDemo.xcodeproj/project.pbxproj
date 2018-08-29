@@ -7,35 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6069BD402136783E00282F6F /* WHNetworkrRequest+SDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 6069BD392136783E00282F6F /* WHNetworkrRequest+SDK.m */; };
+		6069BD412136783E00282F6F /* WHURLs.m in Sources */ = {isa = PBXBuildFile; fileRef = 6069BD3D2136783E00282F6F /* WHURLs.m */; };
+		6069BD422136783E00282F6F /* WHNetworkrRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6069BD3E2136783E00282F6F /* WHNetworkrRequest.m */; };
+		6069BD432136783E00282F6F /* WHResponds.m in Sources */ = {isa = PBXBuildFile; fileRef = 6069BD3F2136783E00282F6F /* WHResponds.m */; };
+		6069BD47213678AC00282F6F /* LinkGameOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6069BD46213678AC00282F6F /* LinkGameOpenSDK.framework */; };
+		6069BD4B213678EA00282F6F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6069BD48213678EA00282F6F /* ViewController.m */; };
+		6069BD4C213678EA00282F6F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6069BD49213678EA00282F6F /* ViewController.xib */; };
+		6069BD4E213679B000282F6F /* LinkGameOpenSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6069BD46213678AC00282F6F /* LinkGameOpenSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4B9D23020A5819F0013D643 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B9D22F20A5819F0013D643 /* AppDelegate.m */; };
-		C4B9D23320A5819F0013D643 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B9D23220A5819F0013D643 /* ViewController.m */; };
-		C4B9D23620A5819F0013D643 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B9D23420A5819F0013D643 /* Main.storyboard */; };
 		C4B9D23820A581A10013D643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4B9D23720A581A10013D643 /* Assets.xcassets */; };
 		C4B9D23B20A581A10013D643 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B9D23920A581A10013D643 /* LaunchScreen.storyboard */; };
 		C4B9D23E20A581A10013D643 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B9D23D20A581A10013D643 /* main.m */; };
 		C4B9D24920A5820B0013D643 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B9D24420A5820A0013D643 /* Utils.m */; };
-		C4B9D24A20A5820B0013D643 /* BSKImagePreView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B9D24620A5820B0013D643 /* BSKImagePreView.m */; };
-		C4B9D24B20A5820B0013D643 /* flower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4B9D24720A5820B0013D643 /* flower.jpg */; };
-		C4B9D25020A582D70013D643 /* LinkGameOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B9D24F20A582D70013D643 /* LinkGameOpenSDK.framework */; };
+		FE20789F7B84637F08282A8A /* libPods-LinkGameOpenSDKDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E33AD6A55D8D8622FB19DD2 /* libPods-LinkGameOpenSDKDemo.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6069BD4F213679B000282F6F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6069BD4E213679B000282F6F /* LinkGameOpenSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2A9D08DB50EC30DC7DC39FB8 /* Pods-LinkGameOpenSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkGameOpenSDKDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LinkGameOpenSDKDemo/Pods-LinkGameOpenSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		3E33AD6A55D8D8622FB19DD2 /* libPods-LinkGameOpenSDKDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LinkGameOpenSDKDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E789805104EE8AF4B408AB3 /* Pods-LinkGameOpenSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkGameOpenSDKDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LinkGameOpenSDKDemo/Pods-LinkGameOpenSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
+		6069BD382136783E00282F6F /* WHURLs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHURLs.h; sourceTree = "<group>"; };
+		6069BD392136783E00282F6F /* WHNetworkrRequest+SDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WHNetworkrRequest+SDK.m"; sourceTree = "<group>"; };
+		6069BD3A2136783E00282F6F /* WHNetworkrRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHNetworkrRequest.h; sourceTree = "<group>"; };
+		6069BD3B2136783E00282F6F /* WHResponds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHResponds.h; sourceTree = "<group>"; };
+		6069BD3C2136783E00282F6F /* WHNetworkrRequest+SDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WHNetworkrRequest+SDK.h"; sourceTree = "<group>"; };
+		6069BD3D2136783E00282F6F /* WHURLs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHURLs.m; sourceTree = "<group>"; };
+		6069BD3E2136783E00282F6F /* WHNetworkrRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHNetworkrRequest.m; sourceTree = "<group>"; };
+		6069BD3F2136783E00282F6F /* WHResponds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHResponds.m; sourceTree = "<group>"; };
+		6069BD46213678AC00282F6F /* LinkGameOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LinkGameOpenSDK.framework; sourceTree = "<group>"; };
+		6069BD48213678EA00282F6F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6069BD49213678EA00282F6F /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		6069BD4A213678EA00282F6F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C4B9D22B20A5819F0013D643 /* LinkGameOpenSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkGameOpenSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B9D22E20A5819F0013D643 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C4B9D22F20A5819F0013D643 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C4B9D23120A5819F0013D643 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C4B9D23220A5819F0013D643 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C4B9D23520A5819F0013D643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4B9D23720A581A10013D643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4B9D23A20A581A10013D643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4B9D23C20A581A10013D643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4B9D23D20A581A10013D643 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4B9D24420A5820A0013D643 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		C4B9D24520A5820B0013D643 /* BSKImagePreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSKImagePreView.h; sourceTree = "<group>"; };
-		C4B9D24620A5820B0013D643 /* BSKImagePreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSKImagePreView.m; sourceTree = "<group>"; };
-		C4B9D24720A5820B0013D643 /* flower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower.jpg; sourceTree = "<group>"; };
 		C4B9D24820A5820B0013D643 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
-		C4B9D24F20A582D70013D643 /* LinkGameOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LinkGameOpenSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,19 +69,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4B9D25020A582D70013D643 /* LinkGameOpenSDK.framework in Frameworks */,
+				FE20789F7B84637F08282A8A /* libPods-LinkGameOpenSDKDemo.a in Frameworks */,
+				6069BD47213678AC00282F6F /* LinkGameOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6069BD372136783E00282F6F /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				6069BD382136783E00282F6F /* WHURLs.h */,
+				6069BD392136783E00282F6F /* WHNetworkrRequest+SDK.m */,
+				6069BD3A2136783E00282F6F /* WHNetworkrRequest.h */,
+				6069BD3B2136783E00282F6F /* WHResponds.h */,
+				6069BD3C2136783E00282F6F /* WHNetworkrRequest+SDK.h */,
+				6069BD3D2136783E00282F6F /* WHURLs.m */,
+				6069BD3E2136783E00282F6F /* WHNetworkrRequest.m */,
+				6069BD3F2136783E00282F6F /* WHResponds.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
 		C4B9D22220A5819F0013D643 = {
 			isa = PBXGroup;
 			children = (
 				C4B9D24C20A5825E0013D643 /* Frameworks */,
 				C4B9D22D20A5819F0013D643 /* LinkGameOpenSDKDemo */,
 				C4B9D22C20A5819F0013D643 /* Products */,
+				CB05AF450CE56F870BDC63DE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,16 +113,14 @@
 		C4B9D22D20A5819F0013D643 /* LinkGameOpenSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
-				C4B9D24520A5820B0013D643 /* BSKImagePreView.h */,
-				C4B9D24620A5820B0013D643 /* BSKImagePreView.m */,
-				C4B9D24720A5820B0013D643 /* flower.jpg */,
+				6069BD372136783E00282F6F /* NetWork */,
+				6069BD4A213678EA00282F6F /* ViewController.h */,
+				6069BD48213678EA00282F6F /* ViewController.m */,
+				6069BD49213678EA00282F6F /* ViewController.xib */,
 				C4B9D24820A5820B0013D643 /* Utils.h */,
 				C4B9D24420A5820A0013D643 /* Utils.m */,
 				C4B9D22E20A5819F0013D643 /* AppDelegate.h */,
 				C4B9D22F20A5819F0013D643 /* AppDelegate.m */,
-				C4B9D23120A5819F0013D643 /* ViewController.h */,
-				C4B9D23220A5819F0013D643 /* ViewController.m */,
-				C4B9D23420A5819F0013D643 /* Main.storyboard */,
 				C4B9D23720A581A10013D643 /* Assets.xcassets */,
 				C4B9D23920A581A10013D643 /* LaunchScreen.storyboard */,
 				C4B9D23C20A581A10013D643 /* Info.plist */,
@@ -91,9 +132,19 @@
 		C4B9D24C20A5825E0013D643 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C4B9D24F20A582D70013D643 /* LinkGameOpenSDK.framework */,
+				6069BD46213678AC00282F6F /* LinkGameOpenSDK.framework */,
+				3E33AD6A55D8D8622FB19DD2 /* libPods-LinkGameOpenSDKDemo.a */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB05AF450CE56F870BDC63DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A9D08DB50EC30DC7DC39FB8 /* Pods-LinkGameOpenSDKDemo.debug.xcconfig */,
+				5E789805104EE8AF4B408AB3 /* Pods-LinkGameOpenSDKDemo.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4B9D24120A581A10013D643 /* Build configuration list for PBXNativeTarget "LinkGameOpenSDKDemo" */;
 			buildPhases = (
+				93CDEF4D9F9F634E916CDC08 /* [CP] Check Pods Manifest.lock */,
 				C4B9D22720A5819F0013D643 /* Sources */,
 				C4B9D22820A5819F0013D643 /* Frameworks */,
 				C4B9D22920A5819F0013D643 /* Resources */,
+				6069BD4F213679B000282F6F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,23 +206,46 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4B9D24B20A5820B0013D643 /* flower.jpg in Resources */,
 				C4B9D23B20A581A10013D643 /* LaunchScreen.storyboard in Resources */,
+				6069BD4C213678EA00282F6F /* ViewController.xib in Resources */,
 				C4B9D23820A581A10013D643 /* Assets.xcassets in Resources */,
-				C4B9D23620A5819F0013D643 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		93CDEF4D9F9F634E916CDC08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LinkGameOpenSDKDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C4B9D22720A5819F0013D643 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4B9D23320A5819F0013D643 /* ViewController.m in Sources */,
-				C4B9D24A20A5820B0013D643 /* BSKImagePreView.m in Sources */,
+				6069BD422136783E00282F6F /* WHNetworkrRequest.m in Sources */,
 				C4B9D23E20A581A10013D643 /* main.m in Sources */,
+				6069BD4B213678EA00282F6F /* ViewController.m in Sources */,
+				6069BD402136783E00282F6F /* WHNetworkrRequest+SDK.m in Sources */,
+				6069BD432136783E00282F6F /* WHResponds.m in Sources */,
+				6069BD412136783E00282F6F /* WHURLs.m in Sources */,
 				C4B9D23020A5819F0013D643 /* AppDelegate.m in Sources */,
 				C4B9D24920A5820B0013D643 /* Utils.m in Sources */,
 			);
@@ -178,14 +254,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C4B9D23420A5819F0013D643 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C4B9D23520A5819F0013D643 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C4B9D23920A581A10013D643 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -309,13 +377,13 @@
 		};
 		C4B9D24220A581A10013D643 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A9D08DB50EC30DC7DC39FB8 /* Pods-LinkGameOpenSDKDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YP8G3T6PA9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/LinkGameOpenSDKDemo/Frameworks",
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = LinkGameOpenSDKDemo/Info.plist;
@@ -331,13 +399,13 @@
 		};
 		C4B9D24320A581A10013D643 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E789805104EE8AF4B408AB3 /* Pods-LinkGameOpenSDKDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YP8G3T6PA9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/LinkGameOpenSDKDemo/Frameworks",
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = LinkGameOpenSDKDemo/Info.plist;

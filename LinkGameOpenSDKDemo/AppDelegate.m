@@ -7,93 +7,144 @@
 //
 
 #import "AppDelegate.h"
-
 #import <LinkGameOpenSDK/LGOpenSDK.h>
+#import "ViewController.h"
 #import "Utils.h"
-#define APP_ID @"256abdejmnpstuvwyz"
-#define APP_secret @"b03af2ec5e284502653f3b5b60d4c2a2"
 
-@interface AppDelegate ()<LinkGameOpenSDKDelegate>
+#define APPID @"015678bdehlqstuvwy"
+
+@interface AppDelegate ()<LGOpenSDKDelegate>
 
 @end
 
 @implementation AppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    初始化,注册回调
-    [[LGOpenSDK share]RegisterAppID:APP_ID AppSecret:APP_secret Delegate:self];
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    //初始化需要被管理的视图控制器
+    ViewController *home = [[ViewController alloc]init];
+    self.window.rootViewController = home;
+    
+    [[LGOpenSDK share] registerApp:APPID withDelegate:self];
+    
     return YES;
 }
 
--(void)didResponsed:(LGBaseResponse *)response{
-    NSLog(@"收到回调Status: %@",response.status);
-    NSLog(@"收到回调Errormessage: %@",response.Message);
-    
-    if (response.ResultRequestType == LGRequestTypeShare) {
-        LGShareResponse * shareResponse = (LGShareResponse *)response;
-            switch (shareResponse.ErrorCode) {
-                case LGOpenSDKErrorCodeNoError:
-                    NSLog(@"分享成功!!");
-                    [Utils alertInfo:@"分享成功!!" showOkButton:YES];
-                    break;
-                case LGOpenSDKErrorCodeUserCancel:
-                    NSLog(@"用户取消分享");
-                    [Utils alertInfo:@"用户取消分享" showOkButton:YES];
-                    break;
-                case LGOpenSDKErrorCodeUserRefused:
-                    NSLog(@"用户拒绝分享");
-                    [Utils alertInfo:@"用户拒绝分享" showOkButton:YES];
-                    break;
-                case LGOpenSDKErrorCodeParematersError:
-                    NSLog(@"分享参数错误");
-                    [Utils alertInfo:@"分享参数错误" showOkButton:YES];
-                    break;
-                case LGOpenSDKErrorCodeTimeOut:
-                    NSLog(@"分享超时");
-                    [Utils alertInfo:@"分享超时" showOkButton:YES];
-                    break;
-                case LGOpenSDKErrorCodeOtherError:
-                    NSLog(@"分享:其他错误");
-                    [Utils alertInfo:@"分享:其他错误" showOkButton:YES];
-                    break;
-            }
-    }
-    if (response.ResultRequestType == LGRequestTypeAuthorize){
-        LGAuthorizeResponse * authorizeResponse = (LGAuthorizeResponse *)response;
-        switch (authorizeResponse.ErrorCode) {
-            case LGOpenSDKErrorCodeNoError:
-            {
-                NSLog(@"授权成功!!");
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"AuthSuccessNotification" object:self userInfo:@{@"RefreshToken":authorizeResponse.RefreshToken,@"APPID":APP_ID}];
-            }
-                break;
-            case LGOpenSDKErrorCodeUserCancel:
-                NSLog(@"用户取消授权");
-                [Utils alertInfo:@"用户取消授权" showOkButton:YES];
-                break;
-            case LGOpenSDKErrorCodeTimeOut:
-                NSLog(@"用户长时间未点击授权");
-                [Utils alertInfo:@"用户长时间未点击授权" showOkButton:YES];
-                break;
-            case LGOpenSDKErrorCodeOtherError:
-                NSLog(@"其他错误");
-                [Utils alertInfo:@"其他错误" showOkButton:YES];
-                break;
-
-            case LGOpenSDKErrorCodeUserRefused:
-                NSLog(@"用户拒绝授权");
-                [Utils alertInfo:@"用户拒绝授权" showOkButton:YES];
-                break;
-            case LGOpenSDKErrorCodeParematersError:
-                NSLog(@"授权参数错误");
-                [Utils alertInfo:@"授权参数错误" showOkButton:YES];
-                break;
-        }
+//授权登录返回的回调
+- (void)authOnResault:(LGSDKAuthResult *)resault {
+    switch (resault.errorCode) {
+        case LGRequestErrorCode_Success:
+            NSLog(@"授权成功!!");
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"AuthSuccessNotification" object:self userInfo:@{@"code":resault.code}];
+            break;
+        case LGRequestErrorCode_ParameterError:
+            NSLog(@"授权:参数错误");
+            [Utils alertInfo:@"授权:参数错误" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_ParameterIntegralityError:
+            NSLog(@"授权:参数校验失败");
+            [Utils alertInfo:@"授权:参数校验失败" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_TypeNotSupport:
+            NSLog(@"暂不支持的请求类型");
+            [Utils alertInfo:@"暂不支持的请求类型" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_NetworkError:
+            NSLog(@"授权:网络错误");
+            [Utils alertInfo:@"授权:网络错误" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_AppNotFound:
+            NSLog(@"AppId不存在");
+            [Utils alertInfo:@"AppId不存在" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_UserCanceled:
+            NSLog(@"用户取消授权");
+            [Utils alertInfo:@"用户取消授权" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_Other:
+            NSLog(@"授权:其他错误");
+            [Utils alertInfo:@"授权:其他错误" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_AppNotExist:
+            NSLog(@"应用不存在");
+            [Utils alertInfo:@"应用不存在" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_AppNotApproved:
+            NSLog(@"APP未通过审核");
+            [Utils alertInfo:@"APP未通过审核" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_ScopeError:
+            NSLog(@"Scope作用域错误");
+            [Utils alertInfo:@"Scope作用域错误" showOkButton:YES];
+            break;
+        default:
+            NSLog(@"授权:未知错误，请于游戏互联联系");
+            break;
     }
 }
 
--(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+//分享的返回回调
+- (void)shareOnResault:(LGSDKShareResult *)resault{
+    switch (resault.errorCode) {
+        case LGRequestErrorCode_Success:
+            NSLog(@"分享成功!!");
+            [Utils alertInfo:@"分享成功!!" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_ParameterError:
+            NSLog(@"分享:参数错误");
+            [Utils alertInfo:@"分享:参数错误" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_ParameterIntegralityError:
+            NSLog(@"分享:参数校验失败");
+            [Utils alertInfo:@"分享:参数校验失败" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_TypeNotSupport:
+            NSLog(@"分享:暂不支持的请求类型");
+            [Utils alertInfo:@"分享:暂不支持的请求类型" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_NetworkError:
+            NSLog(@"分享:网络错误");
+            [Utils alertInfo:@"分享:网络错误" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_FileError:
+            NSLog(@"分享:本地图片文件错误");
+            [Utils alertInfo:@"分享:本地图片文件错误" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_AppNotFound:
+            NSLog(@"AppId不存在");
+            [Utils alertInfo:@"AppId不存在" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_UserCanceled:
+            NSLog(@"用户取消分享");
+            [Utils alertInfo:@"用户取消分享" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_Other:
+            NSLog(@"分享:其他错误");
+            [Utils alertInfo:@"分享:其他错误" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_AppNotExist:
+            NSLog(@"应用不存在");
+            [Utils alertInfo:@"应用不存在" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_AppNotApproved:
+            NSLog(@"APP未通过审核");
+            [Utils alertInfo:@"APP未通过审核" showOkButton:YES];
+            break;
+        case LGRequestErrorCode_ScopeError:
+            NSLog(@"Scope作用域错误");
+            [Utils alertInfo:@"Scope作用域错误" showOkButton:YES];
+            break;
+        default:
+            NSLog(@"分享:未知错误，请于游戏互联联系");
+            break;
+    }
+}
 
+//此方法必须实现
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
     return YES;
 }
 
